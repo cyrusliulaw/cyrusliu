@@ -48,7 +48,7 @@
         .container { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
 
         /* ===== Hero Section ===== */
-        .hero { padding: 80px 0 60px; border-bottom: 1px solid var(--border); }
+        .hero { padding: 80px 0 60px; }
         .hero-grid { display: flex; gap: 50px; align-items: flex-start; }
         
         .hero-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
@@ -81,16 +81,17 @@
         /* ===== Navigation ===== */
         /* 【修复2】导航栏背景通栏，内部容器限宽，确保左侧与下方文字完美对齐 */
         nav {
-            border-bottom: 1px solid var(--border); 
-            position: sticky;
-            top: 0; 
-            background: rgba(252, 251, 249, 0.95); 
-            backdrop-filter: blur(10px); 
-            -webkit-backdrop-filter: blur(10px);
-            z-index: 100;
-            margin: 0 -40px;      /* 抵消外层 container 的 padding，让背景延伸全屏 */
-            padding: 0 40px;      /* 重新加上 padding，让内容与下方对齐 */
-            height: var(--nav-height);
+           border-top: 1px solid var(--border);     /* 新增：让上边框也享受通栏效果 */
+           border-bottom: 1px solid var(--border); 
+           position: sticky;
+           top: 0; 
+           background: rgba(252, 251, 249, 0.95); 
+           backdrop-filter: blur(10px); 
+           -webkit-backdrop-filter: blur(10px);
+           z-index: 100;
+           margin: 0 -40px;      
+           padding: 0 40px;      
+           height: var(--nav-height);
         }
         
         .nav-inner {
